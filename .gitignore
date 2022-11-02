@@ -38,7 +38,6 @@ cquthesis.Rproj
 *.equ
 *.xdv
 *.tmp
-dtx-style.sty
-cquthesis.cls
-cquthesis.cfg
 main.pdf
+.texpadtmp
+.texpadtmp/*
