@@ -3,7 +3,7 @@
 %%% 使用前请先阅读使用文档和用户协议，内有详细介绍。Happy Texing! :)
 %% =======================================================
 \documentclass%
-	[type=doctor, bilinguallist=apart,]{cquthesis}%
+	[type=doctor, bilinguallist=apart, printmode=twoside]{cquthesis}%
 % 可用选项：
 % type=[bachelor|master|doctor],      % 必选，毕业论文类型，以下项目不填时为默认
 % liberalformat,                      % 可选，仅适用本科生，使用文学类论文标题格式，默认未打开
@@ -20,6 +20,11 @@
 
 % 定义所有的图片文件在 figures 子目录下
 \graphicspath{{figures/}}
+
+% 定义数字圆
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
 
 %*** 写作时，使用这个命令只渲染你想查看的部分，提升工作效率，定稿时注释掉整行
 %\includeonly{contents/experiment,contents/analysis,}

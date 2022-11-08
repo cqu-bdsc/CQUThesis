@@ -221,20 +221,16 @@ bindingoffset=10mm, head=16mm, headsep=11mm, foot=12mm, footnotesep=5mm}
 \renewcommand{\footrulewidth}{0pt}}
 \fancypagestyle{style@fixhead}{%
 \fancyhead{}
-\fancyhead[C]{\zihao{-5}\songti\thepage}
+\fancyhead[EC]{\zihao{5}\songti\cqu@thesisname}
+\fancyhead[OC]{\zihao{5}\songti\leftmark}
 \fancyfoot{}
 \fancyfoot[C]{\zihao{-5}\leftmark}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}}
 \fancypagestyle{style@normal}{%  修改页眉样式
-\fancyhead{}
-\if@twosideprint
-\fancyhead[EC]{\zihao{5}\songti\cqu@thesisname}
-\fancyhead[OC]{\zihao{5}\songti\leftmark}
-\else
-\fancyhead[EC]{\zihao{5}\songti\cqu@thesisname}
-\fancyhead[OC]{\zihao{5}\songti\leftmark}
-\fi
+\fancyhf{} % 清空页眉页脚
+\fancyhead[CO]{\zihao{5}\songti\leftmark} % O: 奇数页, L: 左页眉 \rightmark:章节号
+\fancyhead[CE]{\zihao{5}\songti\cqu@thesisname} % E: 偶数页
 \fancyfoot{}
 \fancyfoot[C]{\zihao{-5}\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -654,13 +650,13 @@ pdfcreator = {CQUThesis--v\version, a LaTeX template.}
 \clearpage
 \chapter[\cqu@cabstract@tocname]{\cqu@cabstract@name}
 \pagestyle{style@normal}
-\cqu@fixhead
+%\cqu@fixhead
 \pagenumbering{Roman}
 \cqu@cabstract
 \vskip12bp
 \cqu@put@kw{\heiti\cqu@ckw@title\cqu@title@separatorCN}{\cqu@ckeywords}
 \if@twosideprint\ifcqu@openany\ifcqu@abstractopenright\cqu@addblankpage\fi\fi\fi
-\chapter[\cqu@eabstract@tocname]{\sffamily\textbf{\cqu@eabstract@name}}
+\chapter[\cqu@eabstract@tocname]{\rmfamily\textbf{\cqu@eabstract@name}}
 \cqu@fixhead
 \cqu@eabstract
 \vskip12bp
