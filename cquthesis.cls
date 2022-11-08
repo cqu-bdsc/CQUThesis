@@ -599,7 +599,7 @@ language=Python}
 \thispagestyle{style@empty}
 \begin{center}
 \rule{0mm}{15mm}
-\rmfamily
+\rmfamily  % Times New Roman
 \ifcqu@bachelor
 \zihao{-2}\cqu@thesistypenameEN
 \\ \vspace{\stretch{2}}
@@ -612,23 +612,20 @@ language=Python}
 \ifdefstring{\cqu@eassistsupervisor}{}{\relax}{\cqu@assistsupervisorEN\cqu@title@separatorEN\mbox{\cqu@eassistsupervisor}\\}
 \cqu@majorEN\cqu@title@separatorEN\mbox{\cqu@emajor}
 \else
-\zihao{-1}\textbf{\cqu@etitle}
+\zihao{2}\textbf{\cqu@etitle}
 \\ \vspace{\stretch{2}}
-\includegraphics[width=5cm]{CQUbadge.pdf}
+\includegraphics[width=3cm]{CQUbadge.pdf}
 \\ \vspace{\stretch{2}}
-\zihao{3}\cqu@thesistypenameEN
-\\[1mm]
-\textbf{\cqu@workby}
-\\[2mm]
-\zihao{3}\mbox{\textbf{\cqu@eauthor}}
+\zihao{-3}\cqu@thesistypenameEN
 \\ \vspace{\stretch{1}}
+\zihao{-2}\textbf{\cqu@workby}
+\\ \vspace{\stretch{1}}
+\zihao{-2}\mbox{\textbf{\cqu@eauthor}}\\
 \textbf{\cqu@supervisorEN}\textbf{\cqu@esupervisor}\\
-\ifcqu@academic\relax\else\textbf{\cqu@psupervisorEN\cqu@title@separatorEN\cqu@epsupervisor}\\\fi
-\textbf{\cqu@majorEN\cqu@title@separatorEN}\mbox{\textbf{\cqu@emajor}}
+\vspace{\stretch{3}}
 \fi
-\\ \vspace{\stretch{2}}
-\zihao{-2}\cqu@edepartment\\\cqu@universitynameEN\\[1mm]
-\ifdefempty{\cqu@myedate}{\textbf{\edate}}{\textbf{\cqu@myedate}}
+\zihao{-2}\textbf{\cqu@mydata}\\
+%\ifdefempty{\cqu@myedate}{\textbf{\edate}}{\textbf{\cqu@myedate}}
 \vspace{10mm}
 \end{center}}
 \def\makecover{%
