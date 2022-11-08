@@ -348,33 +348,27 @@ FUNCTION {format.anonymous}
 
 INTEGERS { nameptr namesleft numnames name.lang}
 
+
+
 FUNCTION {format.names}
 { 's :=
   #1 'nameptr :=
   s num.names$ 'numnames :=
   numnames 'namesleft :=
-    { namesleft #0 > nameptr #4 < and }
-    { s nameptr "{vv~}{ll}{, jj}{, ff}" format.name$ 't :=
-      t get.str.lang 'name.lang :=
-      name.lang lang.en =
-        { t #1 "{vv~}{ll}{ f{~}}" format.name$ "u" change.case$
-          t #1 "{, jj}" format.name$ *
-          't :=
-        }
-        { t #1 "{ll}{ff}" format.name$ 't := }
-      if$
+    { namesleft #0 > }
+    { s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 't :=
       nameptr #1 >
         { namesleft #1 >
             { ", " * t * }
-            { t "others" =
-                { ", " * format.et.al * }
-                { ", " * t * }
+            { numnames #2 >
+                { "," * }
+                'skip$
+              if$
+              t "others" =
+                { " {\em et~al.}" * }
+                { " and " * t * }
               if$
             }
-          if$
-          nameptr #3 = namesleft #1 > and
-            { ", " * format.et.al * }
-            'skip$
           if$
         }
         't
@@ -384,7 +378,44 @@ FUNCTION {format.names}
     }
   while$
 }
-
+%
+%FUNCTION {format.names}
+%{ 's :=
+%  #1 'nameptr :=
+%  s num.names$ 'numnames :=
+%  numnames 'namesleft :=
+%    { namesleft #0 > nameptr #4 < and }
+%    { s nameptr "{vv~}{ll}{, jj}{, ff}" format.name$ 't :=
+%      t get.str.lang 'name.lang :=
+%      name.lang lang.en =
+%        { t #1 "{vv~}{ll}{ f{~}}" format.name$ "u" change.case$
+%          t #1 "{, jj}" format.name$ *
+%          't :=
+%        }
+%        { t #1 "{ll}{ff}" format.name$ 't := }
+%      if$
+%      nameptr #1 >
+%        { namesleft #1 >
+%            { ", " * t * }
+%            { t "others" =
+%                { ", " * format.et.al * }
+%                { ", " * t * }
+%              if$
+%            }
+%          if$
+%          nameptr #3 = namesleft #1 > and
+%            { ", " * format.et.al * }
+%            'skip$
+%          if$
+%        }
+%        't
+%      if$
+%      nameptr #1 + 'nameptr :=
+%      namesleft #1 - 'namesleft :=
+%    }
+%  while$
+%}
+%
 FUNCTION {format.key}
 { empty$
     { key field.or.null }
