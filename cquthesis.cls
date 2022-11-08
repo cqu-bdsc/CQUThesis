@@ -221,19 +221,19 @@ bindingoffset=10mm, head=16mm, headsep=11mm, foot=12mm, footnotesep=5mm}
 \renewcommand{\footrulewidth}{0pt}}
 \fancypagestyle{style@fixhead}{%
 \fancyhead{}
-\fancyhead[C]{\zihao{-5}\songti\leftmark}
+\fancyhead[C]{\zihao{-5}\songti\thepage}
 \fancyfoot{}
-\fancyfoot[C]{\zihao{-5}\thepage}
+\fancyfoot[C]{\zihao{-5}\leftmark}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}}
-\fancypagestyle{style@normal}{%
+\fancypagestyle{style@normal}{%  修改页眉样式
 \fancyhead{}
 \if@twosideprint
-\fancyhead[EC]{\zihao{-5}\songti\cqu@thesisname}
-\fancyhead[OC]{\zihao{-5}\songti\leftmark}
+\fancyhead[EC]{\zihao{5}\songti\cqu@thesisname}
+\fancyhead[OC]{\zihao{5}\songti\leftmark}
 \else
-\fancyhead[L]{\zihao{-5}\songti\cqu@thesisname}
-\fancyhead[R]{\zihao{-5}\songti\leftmark}
+\fancyhead[EC]{\zihao{5}\songti\cqu@thesisname}
+\fancyhead[OC]{\zihao{5}\songti\leftmark}
 \fi
 \fancyfoot{}
 \fancyfoot[C]{\zihao{-5}\thepage}
